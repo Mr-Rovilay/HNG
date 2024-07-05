@@ -32,4 +32,28 @@ body {
   margin: 0 auto;
   padding: 1rem;
 }
+.hero {
+  background-image: url("Bannar.png");
+  width: auto;
+  height: 100%;
+ }
+
+ .mt {
+  margin-top: 80px;
+}
+ 
+/* Font: Montserrat  
+Caption is 16px
+Body is 20px
+Heading 2 is 24px
+Heading 1 is 48px
+
+p
+Color code
+Primary: Hex CDBAA1
+ Button color Hex967041
+Secondary: Hex475244
+Text color: Hex242523
+Page Background color: HexFCFCFC
+Image background color: HexFCFAF8 */
 

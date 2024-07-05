@@ -33,18 +33,18 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-white ${isScrolled ? "shadow-sm" : "shadow-md"} sticky top-0 w-full z-50`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={`bg-white ${isScrolled ? "shadow-sm" : "shadow-sm"} fixed top-0 w-full z-50`}>
+      <div className="container">
+        <div className="flex justify-between items-center h-14">
           <div className="flex-shrink-0">
-            <img className="h-8 w-8" src="" alt="comfy" />
+            <img className="" src="/Frame 3.png" alt="comfy" />
           </div>
           <div className="hidden md:flex space-x-12">
             {["Home", "About", "Shop", "Blog", "Contact", "FAQ"].map((link) => (
               <a
                 key={link}
                 href="#"
-                className={`text-gray ${activeLink === link ? "text-[#E3813B] font-bold" : ""}`}
+                className={`text-gray ${activeLink === link ? "text-[#C19A6B] font-bold" : ""}`}
                 onClick={() => handleLinkClick(link)}
               >
                 {link}
@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className="border-t sm:border-t-0 sm:border-s border-gray-100 light:border-neutral-800"></div>
             <div className="flex relative cursor-pointer">
               <BsHandbag />
-              <span className="absolute bottom-3 left-3 flex h-4 w-4 items-center justify-center rounded-full bg-[#E3813B] text-xs text-white">
+              <span className="absolute bottom-3 left-3 flex h-4 w-4 items-center justify-center rounded-full bg-[#C19A6B] text-xs text-white">
                 2
               </span>
             </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
               <a
                 key={link}
                 href="#"
-                className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === link ? "text-[#C46200]" : ""}`}
+                className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === link ? "text-[#C19A6B]" : ""}`}
                 onClick={() => handleLinkClick(link)}
               >
                 {link}
