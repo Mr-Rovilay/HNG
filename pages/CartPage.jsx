@@ -2,71 +2,54 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 
-
 const CartPage = () => {
   const { cartItems, removeFromCart, addToCart, categories } = useContext(StoreContext);
   const [showToast, setShowToast] = useState(false);
 
-  const totalItems = Object.values(cartItems).reduce(
-    (acc, val) => acc + val,
-    0
-  );
+  const totalItems = Object.values(cartItems).reduce((acc, val) => acc + val, 0);
 
-  const subtotal = Object.entries(cartItems).reduce(
-    (acc, [itemId, quantity]) => {
-      const category = categories.find((cat) => cat.id === parseInt(itemId));
-      if (category) {
-        return (
-          acc +
-          quantity *
-            parseFloat(category.price.replace("₦", "").replace(",", ""))
-        );
-      }
-      return acc;
-    },
-    0
-  );
+  const subtotal = Object.entries(cartItems).reduce((acc, [itemId, quantity]) => {
+    const category = categories.find((cat) => cat.id === parseInt(itemId));
+    if (category) {
+      return (
+        acc +
+        quantity *
+          parseFloat(category.price.replace("₦", "").replace(",", ""))
+      );
+    }
+    return acc;
+  }, 0);
 
   const deliveryPrice = 1000;
-
   const totalPrice = subtotal + deliveryPrice;
+
   const handleIncrease = (itemId) => {
     addToCart(itemId);
   };
 
   const handleDecrease = (itemId, currentQuantity) => {
     if (currentQuantity === 1) {
-      setShowToast(true); // Show toast if trying to decrease below 1
+      setShowToast(true);
     } else {
       removeFromCart(itemId);
     }
   };
 
   return (
-    <div className="container min-h-screen mt">
-      <h1 className="">cart page</h1>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
+      <h1 className="text-2xl font-semibold mb-4">Cart Page</h1>
       <div className="">
         {totalItems > 0 ? (
           <div>
             <div className="overflow-auto mb-6">
-              <table className="w-full max-w-4xl min-w-max table-auto text-left">
+              <table className="w-full table-auto text-left">
                 <thead>
-                  <tr>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Items
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Product Name
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Quantity
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Price
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Action
-                    </th>
+                  <tr className="bg-blue-gray-50">
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Items</th>
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Product Name</th>
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Quantity</th>
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Price</th>
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,21 +58,17 @@ const CartPage = () => {
                     if (quantity > 0) {
                       return (
                         <tr key={category.id}>
-
                           <td className="p-2 sm:p-4">
-                            <div className="w-2 h-2 overflow-hidden rounded-full">
+                            <div className="w-16 h-16 sm:w-24 sm:h-24 overflow-hidden rounded-lg">
                               <img
                                 src={category.img}
                                 alt={category.title}
-                                className="w-full h-full object-cover img"
+                                className="w-full h-full object-cover"
                               />
                             </div>
                           </td>
-
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
-                            {category.title}
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100 mt-6">
+                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">{category.title}</td>
+                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">
                             <button
                               onClick={() => handleDecrease(category.id, quantity)}
                               className={`bg-gray-200 px-3 py-1 rounded-lg ${quantity === 1 ? 'cursor-not-allowed opacity-50' : 'hover:bg-gray-300'}`}
@@ -97,7 +76,7 @@ const CartPage = () => {
                             >
                               -
                             </button>
-                            <span>{quantity}</span>
+                            <span className="mx-2">{quantity}</span>
                             <button
                               onClick={() => handleIncrease(category.id)}
                               className="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
@@ -105,10 +84,8 @@ const CartPage = () => {
                               +
                             </button>
                           </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
-                            {category.price}
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
+                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">{category.price}</td>
+                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">
                             <button
                               onClick={() => removeFromCart(category.id)}
                               className="text-red-500 hover:text-red-700"
@@ -134,9 +111,9 @@ const CartPage = () => {
                 <p>Total Price: ₦{totalPrice.toFixed(2)}</p>
                 <Link
                   to="/check-out"
-                  className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white"
+                  className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white block w-full md:w-auto text-center md:text-left"
                 >
-               Place Order
+                  Place Order
                 </Link>
               </div>
             </div>
