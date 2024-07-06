@@ -1,6 +1,5 @@
 import  { useContext, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
-import Footer from "../src/components/Footer";
 
 const CheckoutPage = () => {
   const { cartItems, removeFromCart, categories } = useContext(StoreContext);
@@ -206,7 +205,6 @@ const CheckoutPage = () => {
           </div>
         )}
       </div>
-      <Footer/>
     </div>
   );
 };
