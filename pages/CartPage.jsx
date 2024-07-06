@@ -37,7 +37,7 @@ const CartPage = () => {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
-      <h1 className="text-2xl font-semibold mb-4">Cart Page</h1>
+      <h1 className="text-2xl font-semibold mb-4 mt">Cart Page</h1>
       <div className="">
         {totalItems > 0 ? (
           <div>
