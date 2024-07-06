@@ -95,4 +95,58 @@ export const categories = [
     title: "Seje L-Shaped Sofa",
     price: "₦171,430.66",
   },
+  {
+    id: 17,
+    img: "/hassan-bed-and-beddings-39871582961886_360x.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 18,
+    img: "/ode-chair-occasional-chairs-40639242830046_1080x1080.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 19,
+    img: "/ada-sofas-39869957603550_1080x1080.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 20,
+    img: "/igho-bed-and-beddings-39871600689374_1080x1080.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 21,
+    img: "/hassan-bed-and-beddings-39871582961886_360x.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 22,
+    img: "/igho-bed-and-beddings-39871600689374_1080x1080.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 23,
+    img: "/hassan-bed-and-beddings-39871582961886_360x.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 24,
+    img: "/ada-sofas-39869957603550_1080x1080.webp",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
+  {
+    id: 25,
+    img: "/dream-bedframe-39871388680414_1080x1080.jpg",
+    title: "Seje L-Shaped Sofa",
+    price: "₦171,430.66",
+  },
 ];

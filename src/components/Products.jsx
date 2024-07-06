@@ -3,11 +3,11 @@ import { categories } from "../data";
 import ProductCard from "./ProductCard";
 
 const Products = () => {
-  const [visibleProducts, setVisibleProducts] = useState(8); // Initial number of products to display
+  const [visibleProducts, setVisibleProducts] = useState(8);
 
   const loadMore = () => {
-    // Increase the number of visible products
-    setVisibleProducts(prev => prev + 8); // Increase by 4, or any desired number
+
+    setVisibleProducts(prev => prev + 8);
   };
 
   return (
