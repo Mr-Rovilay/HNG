@@ -12,7 +12,7 @@ const Products = () => {
 
   return (
     <section className="py-16">
-      <div className="container">
+      <div className="">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-center justify-center">
           {categories.slice(0, visibleProducts).map((product) => (
             <ProductCard key={product.id} product={product} />
