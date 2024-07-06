@@ -46,7 +46,7 @@ const CartPage = () => {
                 <thead>
                   <tr className="bg-blue-gray-50">
                     <th className="p-4 sm:p-2 border-b border-blue-gray-100">Items</th>
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Product Name</th>
+                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Title</th>
                     <th className="p-4 sm:p-2 border-b border-blue-gray-100">Quantity</th>
                     <th className="p-4 sm:p-2 border-b border-blue-gray-100">Price</th>
                     <th className="p-4 sm:p-2 border-b border-blue-gray-100">Action</th>
@@ -63,7 +63,7 @@ const CartPage = () => {
                               <img
                                 src={category.img}
                                 alt={category.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover img"
                               />
                             </div>
                           </td>
@@ -111,7 +111,7 @@ const CartPage = () => {
                 <p>Total Price: ₦{totalPrice.toFixed(2)}</p>
                 <Link
                   to="/check-out"
-                  className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white block w-full md:w-auto text-center md:text-left"
+                  className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white md:w-auto text-center md:text-left"
                 >
                   Place Order
                 </Link>

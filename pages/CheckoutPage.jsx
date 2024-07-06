@@ -63,7 +63,7 @@ const CheckoutPage = () => {
                       Items
                     </th>
                     <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Product Name
+                     Title
                     </th>
                     <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
                       Quantity
