@@ -3,15 +3,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { BsHandbag } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { StoreContext } from "../../context/StoreContext"; // Import StoreContext
+import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(" ");
+  const [activeLink, setActiveLink] = useState("Home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [itemCount, setItemCount] = useState(0);
 
-  const { cartItems } = useContext(StoreContext); // Use StoreContext
+  const { cartItems } = useContext(StoreContext); 
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -36,7 +36,7 @@ const Navbar = () => {
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce((sum, count) => sum + count, 0);
     setItemCount(totalItems);
-  }, [cartItems]); // Update itemCount whenever cartItems changes
+  }, [cartItems]); 
 
   return (
     <nav className={`bg-white ${isScrolled ? "shadow-sm" : "shadow-sm"} fixed top-0 w-full z-50`}>

@@ -13,14 +13,14 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-y-0 left-0 flex flex-col justify-center px-6 md:px-6 text-white"
+          className="absolute inset-y-0 grid grid-col items-center justify-center md:px-6 text-white"
         >
-          <h5 className="uppercase text-sm md:text-xl font-light">Best Deals</h5>
+          <h5 className="uppercase text-sm md:text-xl font-light flex items-center justify-center">Best Deals</h5>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-base max-w-lg mt-4"
+            className="text-center"
           >
             Discover our exclusive collection of handcrafted furniture, <br /> designed to bring elegance and comfort to your home. <br /> Each piece is made with premium materials to ensure durability and style.
           </motion.p>
@@ -28,7 +28,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex text-center items-center pb-y-4"
+            className="flex text-center items-center pb-y-4  justify-center"
           >
             <button className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white">
               Shop Now <IoIosArrowRoundForward className="ml-2 text-lg" />

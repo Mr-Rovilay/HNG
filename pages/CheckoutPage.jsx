@@ -1,5 +1,4 @@
 import  { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 
 const CheckoutPage = () => {
@@ -48,11 +47,7 @@ const CheckoutPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can implement logic to process the order, such as sending data to an API, etc.
     console.log("Form Data:", formData);
-    // Optionally, you can clear cart items or redirect to a confirmation page.
-    // clearCart();
-    // history.push("/order-confirmation");
   };
 
   return (

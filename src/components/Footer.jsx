@@ -38,7 +38,6 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        {/* Copyright */}
         <div className="mt-8 text-center text-sm py-5 border border-t-[#955E2A]">
          Copyright &copy; 2024 All rights reserved.
         </div>
