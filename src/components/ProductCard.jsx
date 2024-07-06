@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
           src={img}
           alt={title}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#C19A6B] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className="absolute bottom-4 left-4 flex space-x-2">
             <button
               className="flex items-center justify-center text-white w-8 h-8 bg-[#C19A6B] rounded-full hover:bg-[#a48256] transition-colors duration-300"

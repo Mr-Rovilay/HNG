@@ -59,12 +59,21 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden flex flex-row-reverse gap-10 items-center justify-center">
             <button onClick={toggleMenu} className="text-gray-500 hover:text-gray-700">
               <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
               </svg>
             </button>
+
+            <div className="flex relative cursor-pointer">
+              <Link to="/cart-page">
+                <BsHandbag />
+                <span className="absolute bottom-3 left-3 flex h-4 w-4 items-center justify-center rounded-full bg-[#C19A6B] text-xs text-white">
+                  {itemCount}
+                </span>
+              </Link>
+            </div>
           </div>
           <div className="hidden md:flex space-x-4 text-2xl">
             <div className="cursor-pointer">
