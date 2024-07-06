@@ -28,7 +28,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex text-center items-center pb-5"
+            className="flex text-center items-center pb-y-4"
           >
             <button className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white">
               Shop Now <IoIosArrowRoundForward className="ml-2 text-lg" />
