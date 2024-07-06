@@ -136,7 +136,7 @@ const CartPage = () => {
                   to="/check-out"
                   className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white"
                 >
-                Check Out
+               Place Order
                 </Link>
               </div>
             </div>

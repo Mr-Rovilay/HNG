@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
         <p className="text-gray-700 mb-2 text-left">{price}</p>
         {!cartItems[id] ? (
           <button
-            className="w-full bg-[#C19A6B] text-white py-2 rounded-full hover:bg-[#a48256] transition-colors duration-300 text-sm"
+            className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white"
             onClick={() => addToCart(id)}
           >
             Add to Cart
@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
         ) : (
           <div className="flex justify-between items-center">
             <button
-              className="bg-[#C19A6B] text-white py-2 px-4 rounded-full hover:bg-[#a48256] transition-colors duration-300 text-sm"
+              className="bg-[#C19A6B] text-white py-2 px-4 rounded-full hover:bg-gray-200 hover:text-black transition-colors duration-300 text-sm"
               onClick={() => removeFromCart(id)}
             >
               Remove
