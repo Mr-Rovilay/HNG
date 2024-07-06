@@ -45,7 +45,7 @@ const CartPage = () => {
   return (
     <div className="container min-h-screen mt">
       <h1 className="">cart page</h1>
-      <div className="mx-auto p-4">
+      <div className="">
         {totalItems > 0 ? (
           <div>
             <div className="overflow-auto mb-6">
