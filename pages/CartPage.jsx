@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
+import Footer from "../src/components/Footer";
 
 const CartPage = () => {
   const { cartItems, removeFromCart, addToCart, categories } = useContext(StoreContext);
@@ -126,6 +127,7 @@ const CartPage = () => {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };
