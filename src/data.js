@@ -85,7 +85,7 @@ export const categories = [
   },
   {
     id: 15,
-    img: "public/seje-l-shaped-sofa-39872578126046_1080x1080.webp",
+    img: "/seje-l-shaped-sofa-39872578126046_1080x1080.webp",
     title: "Seje L-Shaped Sofa",
     price: "₦171,430.66",
   },

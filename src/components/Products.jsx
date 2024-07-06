@@ -1,23 +1,30 @@
+import { useState } from 'react';
 import { categories } from "../data";
 import ProductCard from "./ProductCard";
 
 const Products = () => {
+  const [visibleProducts, setVisibleProducts] = useState(8); // Initial number of products to display
+
+  const loadMore = () => {
+    // Increase the number of visible products
+    setVisibleProducts(prev => prev + 8); // Increase by 4, or any desired number
+  };
+
   return (
     <section className="py-16">
-      <div className="mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-[30px] mx-auto md:max-w-none md:max-0">
-          {categories.map((product) => {
-          return (
-            <ProductCard key={product.id} product={product}/>
-          )
-})}
+      <div className="container">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-center justify-center">
+          {categories.slice(0, visibleProducts).map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
-        <div className="text-center mt-8">
-
-        <button className="py-2 rounded-md text-[#C19A6B] border border-[#C19A6B] px-6 transition-colors duration-300 cursor-pointer">
-            Load More
-          </button>
-        </div>
+        {visibleProducts < categories.length && (
+          <div className="flex justify-center mt-8">
+            <button onClick={loadMore} className="py-2 px-6 rounded-md text-[#C19A6B] border border-[#C19A6B] transition-colors duration-300 cursor-pointer hover:bg-[#C19A6B] hover:text-white">
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
