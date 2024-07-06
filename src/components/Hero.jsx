@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="mt relative py-5 overflow-hidden">
       <div className="relative">
         <div className="w-full h-full object-cover rounded-md">
-          <img src="/Bannar.png" alt="Banner" className="lg:h-auto h-64" />
+          <img src="/Bannar.png" alt="Banner" className="lg:min-h-auto min-h-64" />
         </div>
         <div className="absolute inset-0 bg-black/10" />
         <motion.div
