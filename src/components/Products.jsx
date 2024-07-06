@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { categories } from "../data";
+import { useContext, useState } from 'react';
+
 import ProductCard from "./ProductCard";
+import { StoreContext } from '../../context/StoreContext';
 
 const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(8);
+  const {categories} = useContext(StoreContext)
 
   const loadMore = () => {
 

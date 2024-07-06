@@ -10,7 +10,7 @@ const Footer = () => {
             <p className='text-sm text-gray-600'>Email: 123@gmail.com</p>
           </div>
           <div>
-            <h3 className="font-bold uppercase text-sm text-gray-700 mb-4">Categories</h3>
+            <h3 className="uppercase text-sm mb-4">Categories</h3>
             <ul className="text-sm text-gray-600 grid gap-1">
               <li><a href="#">Bed</a></li>
               <li><a href="#">Sofas</a></li>
@@ -21,7 +21,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold uppercase text-sm text-gray-700 mb-4">Get Our Email for Info on New Items, sales and more</h5>
+            <h3 className="uppercase text-sm mb-4">Get Our Email for Info on New Items, sales and more</h3>
             <p className="text-gray-500 text-sm">Enter your email below to be the first to know about new collections and when porduct launches</p>
             <form className="flex mt-3">
               <input

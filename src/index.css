@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 
@@ -53,7 +53,12 @@ h6 {
  .mt {
   margin-top: 80px;
 }
- 
+.img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 /* Font: Montserrat  
 Caption is 16px
 Body is 20px
