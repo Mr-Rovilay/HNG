@@ -13,7 +13,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-y-0 left-0 ml-7 flex flex-col justify-center px-6 md:px-10 text-white"
+          className="absolute inset-y-0 left-0 flex flex-col justify-center px-6 md:px-6 text-white"
         >
           <h5 className="uppercase text-sm md:text-xl font-light">Best Deals</h5>
           <motion.p
