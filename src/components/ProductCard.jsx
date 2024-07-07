@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
             </button>
             <Link
               to=""
-              className="w-8 h-8 bg-white flex items-center justify-center text-primary drop-shadow-xl rounded-full hover:bg-gray-200 transition-colors duration-300"
+              className="hidden w-8 h-8 bg-white  items-center justify-center text-primary drop-shadow-xl rounded-full hover:bg-gray-200 transition-colors duration-300"
             >
               <BsEyeFill className="text-xl text-gray-800" />
             </Link>
