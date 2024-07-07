@@ -56,7 +56,7 @@ const CheckoutPage = () => {
         {totalItems > 0 ? (
           <form onSubmit={handleSubmit}>
             <div className="overflow-auto mb-6">
-              <table className="w-full max-w-4xl min-w-max table-auto text-left">
+              <table className="w-full max-w-4xl min-w-max table-auto text-center">
                 <thead>
                   <tr>
                     <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
@@ -91,7 +91,7 @@ const CheckoutPage = () => {
                               />
                             </div>
                           </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
+                          <td className="p-6 sm:p-4 border-b border-blue-gray-100 text-gray-500">
                             {category.title}
                           </td>
                           <td className="p-6 sm:p-4 border-b border-blue-gray-100">
@@ -106,7 +106,7 @@ const CheckoutPage = () => {
                               onClick={() => handleRemoveFromCart(category.id)}
                               className="text-red-500 hover:text-red-700"
                             >
-                              Remove
+                              +
                             </button>
                           </td>
                         </tr>
@@ -184,13 +184,11 @@ const CheckoutPage = () => {
                 <div>
                   <p className="text-lg font-medium">Order Summary</p>
                   <p>Total Items: {totalItems}</p>
-                  <p>Sub Total: ₦{subtotal.toFixed(2)}</p>
-                  <p>Delivery Price: ₦{deliveryPrice.toFixed(2)}</p>
                   <p className="text-xl font-bold">Total Price: ₦{totalPrice.toFixed(2)}</p>
                 </div>
                 <button
                   type="submit"
-                  className="md:w-44 flex items-center justify-center duration-200 mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white"
+                  className="md:w-44 items-center justify-center duration-200 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white"
                 >
                   Check Out Now
                 </button>

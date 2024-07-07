@@ -14,7 +14,7 @@ const CartPage = () => {
       return (
         acc +
         quantity *
-          parseFloat(category.price.replace("₦", "").replace(",", ""))
+        parseFloat(category.price.replace("₦", "").replace(",", ""))
       );
     }
     return acc;
@@ -36,39 +36,39 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
-      <h1 className="text-2xl font-semibold mb-4 mt">Cart Page</h1>
-      <div className="">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen mt">
+      <h1 className="text-2xl font-semibold mb-4">Cart Page</h1>
+      <div>
         {totalItems > 0 ? (
           <div>
-            <div className="overflow-auto mb-6">
-              <table className="w-full table-auto text-left">
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full table-auto text-center">
                 <thead>
                   <tr className="bg-blue-gray-50">
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Items</th>
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Title</th>
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Quantity</th>
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Price</th>
-                    <th className="p-4 sm:p-2 border-b border-blue-gray-100">Action</th>
+                    <th className="p-2 sm:p-4 border-b border-blue-gray-100">Items</th>
+                    <th className="p-2 sm:p-4 border-b border-blue-gray-100">Title</th>
+                    <th className="p-2 sm:p-4 border-b border-blue-gray-100">Quantity</th>
+                    <th className="p-2 sm:p-4 border-b border-blue-gray-100">Price</th>
+                    <th className="p-2 sm:p-4 border-b border-blue-gray-100">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {categories.map((category, index) => {
+                  {categories.map((category) => {
                     const quantity = cartItems[category.id];
                     if (quantity > 0) {
                       return (
                         <tr key={category.id}>
                           <td className="p-2 sm:p-4">
-                            <div className="w-16 h-16 sm:w-24 sm:h-24 overflow-hidden rounded-lg">
+                        
                               <img
                                 src={category.img}
                                 alt={category.title}
                                 className="w-full h-full object-cover img"
                               />
-                            </div>
+                          
                           </td>
-                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">{category.title}</td>
-                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">
+                          <td className="p-2 sm:p-4 border-b border-blue-gray-100 text-gray-500">{category.title}</td>
+                          <td className="p-2 sm:p-4 border-b border-blue-gray-100 flex items-center mt-2 space-x-2">
                             <button
                               onClick={() => handleDecrease(category.id, quantity)}
                               className={`bg-gray-200 px-3 py-1 rounded-lg ${quantity === 1 ? 'cursor-not-allowed opacity-50' : 'hover:bg-gray-300'}`}
@@ -84,13 +84,13 @@ const CartPage = () => {
                               +
                             </button>
                           </td>
-                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">{category.price}</td>
-                          <td className="p-4 sm:p-2 border-b border-blue-gray-100">
+                          <td className="p-2 sm:p-4 border-b border-blue-gray-100">{category.price}</td>
+                          <td className="p-2 sm:p-4 border-b border-blue-gray-100">
                             <button
                               onClick={() => removeFromCart(category.id)}
                               className="text-red-500 hover:text-red-700"
                             >
-                              Remove
+                              x
                             </button>
                           </td>
                         </tr>
@@ -98,20 +98,19 @@ const CartPage = () => {
                     }
                     return null;
                   })}
+           
                 </tbody>
               </table>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-start my-8 bg-white p-4 rounded-lg shadow-md">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center my-8 bg-white p-4 rounded-lg shadow-md">
               <div className="w-full md:w-1/2">
                 <h3 className="text-lg font-medium mb-2">Shopping Details</h3>
                 <p>Total Items: {totalItems}</p>
-                <p>Sub Total: ₦{subtotal.toFixed(2)}</p>
-                <p>Delivery Price: ₦{deliveryPrice.toFixed(2)}</p>
-                <p>Total Price: ₦{totalPrice.toFixed(2)}</p>
+                <p className="mb-2">Total Price: ₦{totalPrice.toFixed(2)}</p>
                 <Link
                   to="/check-out"
-                  className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white md:w-auto text-center md:text-left"
+                  className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white md:w-auto text-center"
                 >
                   Place Order
                 </Link>

@@ -7,11 +7,11 @@ import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+  const [activeLink, setActiveLink] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [itemCount, setItemCount] = useState(0);
 
-  const { cartItems } = useContext(StoreContext); 
+  const { cartItems } = useContext(StoreContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -36,28 +36,60 @@ const Navbar = () => {
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce((sum, count) => sum + count, 0);
     setItemCount(totalItems);
-  }, [cartItems]); 
+  }, [cartItems]);
 
   return (
     <nav className={`bg-white ${isScrolled ? "shadow-sm" : "shadow-sm"} fixed top-0 w-full z-50`}>
       <div className="container">
         <div className="flex justify-between items-center h-14">
           <div className="flex-shrink-0">
-            <Link to={"/home"}>
+            <Link to={"/"}>
               <img className="" src="/Frame 3.png" alt="comfy" />
             </Link>
           </div>
           <div className="hidden md:flex space-x-12">
-            {["Home", "About", "Shop", "Blog", "Contact", "FAQ"].map((link) => (
-              <Link
-                key={link}
-                to={`/${link.toLowerCase()}`}
-                className={`text-gray ${activeLink === link ? "text-[#C19A6B] font-bold" : ""}`}
-                onClick={() => handleLinkClick(link)}
-              >
-                {link}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              className={`text-gray ${activeLink === "Home" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("Home")}
+            >
+              Home
+            </Link>
+            <Link
+              to="#"
+              className={`text-gray ${activeLink === "About" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("About")}
+            >
+              About
+            </Link>
+            <Link
+              to="/shop"
+              className={`text-gray ${activeLink === "Shop" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("Shop")}
+            >
+              Shop
+            </Link>
+            <Link
+              to="#"
+              className={`text-gray ${activeLink === "Blog" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("Blog")}
+            >
+              Blog
+            </Link>
+            <Link
+              to="#"
+              className={`text-gray ${activeLink === "Contact" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("Contact")}
+            >
+              Contact
+            </Link>
+            <Link
+              to="#"
+              className={`text-gray ${activeLink === "FAQ" ? "text-[#C19A6B] font-bold" : ""}`}
+              onClick={() => handleLinkClick("FAQ")}
+            >
+              FAQ
+            </Link>
           </div>
           <div className="md:hidden flex flex-row-reverse gap-10 items-center justify-center">
             <button onClick={toggleMenu} className="text-gray-500 hover:text-gray-700">
@@ -96,16 +128,48 @@ const Navbar = () => {
         </div>
         {isOpen && (
           <div className="md:hidden">
-            {["Home", "About", "Shop", "Blog", "Contact", "FAQ"].map((link) => (
-              <Link
-                key={link}
-                to={`/${link.toLowerCase()}`}
-                className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === link ? "text-[#C19A6B]" : ""}`}
-                onClick={() => handleLinkClick(link)}
-              >
-                {link}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "Home" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("Home")}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "About" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("About")}
+            >
+              About
+            </Link>
+            <Link
+              to="/shop"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "Shop" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("Shop")}
+            >
+              Shop
+            </Link>
+            <Link
+              to="/blog"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "Blog" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("Blog")}
+            >
+              Blog
+            </Link>
+            <Link
+              to="/contact"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "Contact" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("Contact")}
+            >
+              Contact
+            </Link>
+            <Link
+              to="/faq"
+              className={`block pl-0 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${activeLink === "FAQ" ? "text-[#C19A6B]" : ""}`}
+              onClick={() => handleLinkClick("FAQ")}
+            >
+              FAQ
+            </Link>
           </div>
         )}
       </div>
