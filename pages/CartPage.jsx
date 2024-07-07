@@ -35,6 +35,15 @@ const CartPage = () => {
     }
   };
 
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-NG', {
+      style: 'currency',
+      currency: 'NGN',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount).replace('NGN', '₦');
+  };
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen mt">
       <h1 className="text-2xl font-semibold mb-4">Cart Page</h1>
@@ -107,7 +116,7 @@ const CartPage = () => {
               <div className="w-full md:w-1/2">
                 <h3 className="text-lg font-medium mb-2">Shopping Details</h3>
                 <p>Total Items: {totalItems}</p>
-                <p className="mb-2">Total Price: ₦{totalPrice.toFixed(2)}</p>
+                <p className="mb-2">Total Price: {formatCurrency(totalPrice)}</p>
                 <Link
                   to="/check-out"
                   className="mt-4 md:mt-6 py-2 px-4 rounded-full bg-[#C19A6B] hover:bg-gray-200 hover:text-black transition-colors text-sm text-white md:w-auto text-center"

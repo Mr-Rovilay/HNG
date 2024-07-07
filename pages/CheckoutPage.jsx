@@ -2,7 +2,7 @@ import  { useContext, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
 
 const CheckoutPage = () => {
-  const { cartItems, removeFromCart, categories } = useContext(StoreContext);
+  const { cartItems, categories } = useContext(StoreContext);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -45,6 +45,15 @@ const CheckoutPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+  };
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-NG', {
+      style: 'currency',
+      currency: 'NGN',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount).replace('NGN', '₦');
   };
 
   return (
@@ -119,7 +128,7 @@ const CheckoutPage = () => {
                 <div>
                   <p className="text-lg font-medium mt-5">Order Summary</p>
                   <p>Total Items: {totalItems}</p>
-                  <p className="text-xl font-bold">Total Price: ₦{totalPrice.toFixed(2)}</p>
+                  <p className="">Total Price: {formatCurrency(totalPrice)}</p>
                 </div>
                 <button
                   type="submit"
