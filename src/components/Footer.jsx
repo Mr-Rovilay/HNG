@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="py-12">
-      <div className="container mx-auto">
+      <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className=''>
             <h3 className="uppercase text-sm mb-4">Contact Us</h3>
@@ -38,7 +38,7 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="mt-8 text-center text-sm py-5 border border-t-[#955E2A]">
+        <div className="mt-8 text-center text-sm py-5 border-t border-t-[#955E2A]">
          Copyright &copy; 2024 All rights reserved.
         </div>
       </div>
