@@ -103,7 +103,7 @@ const CartPage = () => {
               </table>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center my-8 bg-white p-4 rounded-lg shadow-md">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center my-8 bg-white rounded-lg shadow-md mt-6">
               <div className="w-full md:w-1/2">
                 <h3 className="text-lg font-medium mb-2">Shopping Details</h3>
                 <p>Total Items: {totalItems}</p>

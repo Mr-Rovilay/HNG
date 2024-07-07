@@ -41,9 +41,6 @@ const CheckoutPage = () => {
     }));
   };
 
-  const handleRemoveFromCart = (itemId) => {
-    removeFromCart(itemId);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,73 +49,11 @@ const CheckoutPage = () => {
 
   return (
     <div className="container min-h-screen mt">
-      <div className="mx-auto p-4">
+      <div className="mx-auto">
         {totalItems > 0 ? (
           <form onSubmit={handleSubmit}>
-            <div className="overflow-auto mb-6">
-              <table className="w-full max-w-4xl min-w-max table-auto text-center">
-                <thead>
-                  <tr>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Items
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                     Title
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Quantity
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Price
-                    </th>
-                    <th className="p-6 sm:p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {categories.map((category) => {
-                    const quantity = cartItems[category.id];
-                    if (quantity > 0) {
-                      return (
-                        <tr key={category.id}>
-                          <td className="p-2 sm:p-4">
-                            <div className="w-16 h-16 overflow-hidden rounded-lg">
-                              <img
-                                src={category.img}
-                                alt={category.title}
-                                className="w-full h-full object-cover img"
-                              />
-                            </div>
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100 text-gray-500">
-                            {category.title}
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
-                            {quantity}
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
-                            {category.price}
-                          </td>
-                          <td className="p-6 sm:p-4 border-b border-blue-gray-100">
-                            <button
-                              type="button"
-                              onClick={() => handleRemoveFromCart(category.id)}
-                              className="text-red-500 hover:text-red-700"
-                            >
-                              +
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    }
-                    return null;
-                  })}
-                </tbody>
-              </table>
-            </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="bg-white rounded-lg shadow-md">
               <h3 className="text-lg font-medium mb-4">Checkout Information</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 sm:col-span-1">
@@ -180,9 +115,9 @@ const CheckoutPage = () => {
              
               </div>
 
-              <div className="mt-4 flex justify-between items-center">
+              <div className="mt-10 flex justify-between items-center">
                 <div>
-                  <p className="text-lg font-medium">Order Summary</p>
+                  <p className="text-lg font-medium mt-5">Order Summary</p>
                   <p>Total Items: {totalItems}</p>
                   <p className="text-xl font-bold">Total Price: ₦{totalPrice.toFixed(2)}</p>
                 </div>
